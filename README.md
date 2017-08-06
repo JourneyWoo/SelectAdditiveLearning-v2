@@ -16,3 +16,13 @@ Cancer dataset: https://wiki.cancerimagingarchive.net/display/Public/LungCT-Diag
 CNN_lung_image_mask.py and CNN_lung_age_contrast.py use the same cnn model to deal with the lung images and the masks and contrast. Since the input and output is not same, the shapes of input and output of these two models are different. 
 
 lung_healthy_cancer.py use the data from lung_healthy_cancer.py and then train the net model.
+
+## lung_h/c_contrast_classification
+LUNGpreprocess.py contains some image preprocessing methods, such as Gray value conversion, Re-sampling, segmentation, Normalized and 0 value centering. 
+
+LUNGdataset.py uses some methods in the LUNGpreprocess.py and make a TFrecord dataset, which are feed into CNN_cancer_healthy.py, containing healthy and cancer images anf corresponding labels.
+
+LUNGcontrast_dataset.py uses some methods in the LUNGpreprocess.py and make a TFrecord dataset, which are feed into CNN_contrast.py, containing lung images anf corresponding contrast labels.
+
+CNN_cancer_healthy.py and CNN_contrast.py are the classifier models.
+
